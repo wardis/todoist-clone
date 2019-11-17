@@ -9,7 +9,7 @@ export const useTasks = selectedProject => {
 
   useEffect(() => {
     let unsubscribe = firebase
-      .firebase()
+      .firestore()
       .collection('tasks')
       .where('userId', '==', 'd0377b58');
 
@@ -49,4 +49,29 @@ export const useTasks = selectedProject => {
   }, [selectedProject]);
 
   return { tasks, archivedTasks };
+};
+
+export const useProjects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection('projects')
+      .where('userId', '==', 'd0377b58')
+      .orderBy('projectId')
+      .get()
+      .then(snapshot => {
+        const allProjects = snapshot.docs.map(project => ({
+          ...project.data(),
+          docId: project.id
+        }));
+
+        if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
+          setProjects(allProjects);
+        }
+      });
+  }, [projects]);
+
+  return { projects, setProjects };
 };
