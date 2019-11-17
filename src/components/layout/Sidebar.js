@@ -10,7 +10,6 @@ export const Sidebar = () => (
   <div className='sidebar' data-testid='sidebar'>
     <ul className='sidebar__generic'>
       <li className='inbox' data-testid='inbox'>
-        >
         <span>
           <FaInbox />
         </span>
