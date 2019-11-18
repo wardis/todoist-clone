@@ -37,7 +37,7 @@ $generic-bg: #db4c3f;
   box-shadow: $generic-box-shadow;
   position: absolute;
   width: 100%;
-  z-index: 10;
+  z-index: 1;
   top: 85px;
   border-radius: 3px;
 }
@@ -70,7 +70,7 @@ $generic-bg: #db4c3f;
   user-select: none;
 }
 
-@mixin btn {
+@mixin btn($width) {
   width: $width;
   background-color: $generic-bg;
   color: #fff !important;
@@ -374,6 +374,38 @@ header {
         font-weight: bold;
         background-color: white;
       }
+    }
+  }
+}
+
+// Show confirm delete
+.project-delete-modal {
+  position: relative;
+
+  &__inner {
+    @include box-overlay();
+    z-index: 99;
+    width: 200px;
+    padding: 10px;
+    top: 10px;
+    right: 0;
+    background-color: white;
+
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      line-height: normal;
+      font-weight: normal;
+      font-size: 15px;
+    }
+
+    button {
+      @include btn('50px');
+    }
+
+    span {
+      @include cancel();
+      font-weight: normal;
     }
   }
 }
