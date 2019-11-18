@@ -35,7 +35,7 @@ export const IndividualProject = ({ project }) => {
         <FaTrashAlt />
         {showConfirm && (
           <div className='project-delete-modal'>
-            <div className='project-delte-modal__inner'>
+            <div className='project-delete-modal__inner'>
               <p>Do you really want to delete this project?</p>
               <button
                 type='button'
