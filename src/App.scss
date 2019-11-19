@@ -95,6 +95,10 @@ $generic-bg: #db4c3f;
   cursor: pointer;
   font-size: 14px;
   margin: 2px 5px;
+
+  &:hover {
+    color: #dd4b39;
+  }
 }
 
 @mixin transparent-button() {
@@ -462,6 +466,28 @@ header {
         border-radius: 16px;
       }
     }
+  }
+}
+
+// Add task
+.add-task {
+}
+
+.add-task__plus,
+.add-project__plus {
+  color: #dd4b39;
+  font-size: 18px;
+}
+
+.add-task__text,
+.add-project__text {
+  display: inline-block;
+  color: #545454;
+  font-size: 14px;
+  margin-left: 15px;
+
+  &:hover {
+    color: #dd4b39;
   }
 }
 
