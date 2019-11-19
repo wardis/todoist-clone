@@ -577,6 +577,36 @@ header {
   }
 }
 
+// Task date
+.task-date {
+  @include box-overlay();
+  background-color: white;
+  width: 200px;
+  right: 0;
+
+  &__list li {
+    @include task-item();
+
+    span:first-of-type {
+      margin-right: 10px;
+
+      svg {
+        fill: gray;
+      }
+    }
+  }
+}
+
+// Project overlay {
+.project-overlay {
+  @include box-overlay();
+  background-color: white;
+
+  &__list li {
+    @include task-item();
+  }
+}
+
 // Add project
 .add-project {
   padding-left: 13px;
